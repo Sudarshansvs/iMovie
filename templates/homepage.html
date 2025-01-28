@@ -1,0 +1,11 @@
+{% extends 'style.html' %}
+{% block block1 %}
+{% if username %}
+<h1>Welcome {{username}}</h1>
+<h1>Logged in successfully </h1>
+<a href="homepage">signout Page</a>
+{% else %}
+<h1>Welcome User click below here to </h1>
+<a href="login">login Page</a>
+{% endif %}
+{% endblock %}
