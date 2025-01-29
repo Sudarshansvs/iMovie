@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('hp1/', views.homepage),
     path('user/',include('user.urls')),
-    path('hp2/',include('movielo.urls')),
+    path('',include('movielo.urls')),
     #path('movie_profile/', include("movielo.urls")),
     path('admin/', admin.site.urls),
 ]
