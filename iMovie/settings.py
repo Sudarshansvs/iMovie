@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -75,17 +76,20 @@ WSGI_APPLICATION = 'iMovie.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'moviedb_h2af',
+#         'USER':'moviedb_h2af_user',
+#         'PASSWORD':'RS79Kamfxwim2BszfguZasc4OuEUuXVR',
+#         'HOST':'postgresql://moviedb_h2af_user:RS79Kamfxwim2BszfguZasc4OuEUuXVR@dpg-cud613l6l47c7386tgug-a.singapore-postgres.render.com/moviedb_h2af',
+#         'PORT':'5432'
+#     }
+# }
+db = 'postgresql://moviedb_h2af_user:RS79Kamfxwim2BszfguZasc4OuEUuXVR@dpg-cud613l6l47c7386tgug-a.singapore-postgres.render.com/moviedb_h2af'
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'moviedb',
-        'USER':'root',
-        'PASSWORD':'Password',
-        'HOST':'127.0.0.1',
-        'PORT':'3306'
-    }
+    'default':dj_database_url.config(default= db)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
